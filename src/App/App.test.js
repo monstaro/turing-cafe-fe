@@ -35,7 +35,7 @@ describe('App', () => {
       target: {value: '5:55'}
     })
     fireEvent.change(getByPlaceholderText('date'), {
-      target: {value: '05/05/05'}
+      target: {value: '05/05/2020'}
     })
     fireEvent.change(getByPlaceholderText('Number of Guests'), {
       target: {value: '7'}

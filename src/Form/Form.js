@@ -8,15 +8,14 @@ class Form extends Component {
         name: null,
         date: null,
         time: null,
-        guestCount: null,
+        number: null,
     }
   }
   updateState = (e) => {
-    if (e.target.id === 'guestCount') {
+    if (e.target.id === 'number') {
       this.setState({[e.target.id]: parseInt(e.target.value)})
     } else {
       this.setState({[e.target.id]: e.target.value})
-
     }
   }
   createReservation = () => {
@@ -48,7 +47,7 @@ class Form extends Component {
         >
         </input>
         <input type="number"
-        id="guestCount"
+        id="number"
         placeholder="Number of Guests" 
         className="guest-count-input"
         onChange={this.updateState}

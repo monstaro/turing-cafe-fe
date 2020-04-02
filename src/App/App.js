@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { fetchReservations } from '../ApiCalls/apiCalls'
+import { fetchReservations, postReservation } from '../ApiCalls/apiCalls'
 import  Form from '../Form/Form'
 import ReservationsContainer from '../ReservationsContainer/ReservationsContainer'
 
@@ -17,7 +17,9 @@ componentDidMount = () => {
     .then(reservations => this.setState({reservations}))
   }
 addNewReservation = (newReservation) => {
-  this.setState({reservations: [...this.state.reservations, newReservation]})
+  console.log(newReservation)
+  this.setState({reservations: [...this.state.reservations, newReservation]}, () => postReservation(newReservation)
+  )
 }
   render() {
     if (this.state.reservations) {
