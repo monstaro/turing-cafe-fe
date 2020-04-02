@@ -1,22 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
 import { fetchReservations } from '../ApiCalls/apiCalls'
+import ReservationsContainer from '../ReservationsContainer/ReservationsContainer'
 
 
-console.log(fetchReservations)
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      reservations: null
+    }
+  }
+componentDidMount = () => {
+    fetchReservations()
+    .then(reservations => this.setState({reservations}))
+  }
   render() {
-    return (
-      <div className="App">
-        <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-
+    if (this.state.reservations) {
+      return (
+        <div className="App">
+          <h1 className='app-title'>Turing Cafe Reservations</h1>
+          <div className='resy-form'>
+  
+          </div>
+          <div className='resy-container'>
+            <ReservationsContainer resos={this.state.reservations}/>
+          </div>
         </div>
-        <div className='resy-container'>
-          
-        </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        'Loading...'
+      )
+    }
+    
   }
 }
 
