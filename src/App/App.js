@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { fetchReservations } from '../ApiCalls/apiCalls'
 
+
+console.log(fetchReservations)
 class App extends Component {
   render() {
     return (
