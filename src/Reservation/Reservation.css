@@ -1,0 +1,12 @@
+.reso-card {
+  background-color: white;
+  border: 6px solid purple;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px auto ;
+  width: 220px;
+}
+
+h2 {
+  color: purple;
+}
