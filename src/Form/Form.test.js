@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './Form';
-import { render, waitFor, fireEvent } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom';
 
 
@@ -22,12 +22,5 @@ describe('Form', () => {
       target: {value: 6}
     })
     expect(getByPlaceholderText('Number of Guests').value).toBe('6')
-    // expect(getByText('mockUser')).toBeInTheDocument()
-    // fireEvent.click(getByText('Make Reservation'))
-
-    // const headline = await waitFor(() => getByText('Turing Cafe Reservations'))
-    // expect(headline).toBeInTheDocument()
-    // const reservation = await waitFor(() => getByText('Leta'))
-    // expect(reservation).toBeInTheDocument()
   })
 })
