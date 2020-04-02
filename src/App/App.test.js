@@ -14,7 +14,7 @@ it('renders without crashing', () => {
 
 describe('App', () => {
 
-  it('Renders a headline', async () => {
+  it('Renders a headline and reso', async () => {
     const { getByText } = render(<App />)
     const headline = await waitFor(() => getByText('Turing Cafe Reservations'))
     expect(headline).toBeInTheDocument()
